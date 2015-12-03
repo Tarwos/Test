@@ -1,0 +1,9 @@
+<div class="col-md-4">
+    <a ui-sref="categories.orders.details({orderId:order.id})" ui-sref-active="active" class="order-item" ng-repeat="order in orders | filter:query | orderBy: ['fromCity', 'toCity']">
+        <p>Order id {{order.id}}</p>
+        <p>{{order.fromCity}} -> {{order.toCity}}</p>
+    </a>
+</div>
+<div class="col-md-4">
+    <div ui-view></div>
+</div>

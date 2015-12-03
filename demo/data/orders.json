@@ -1,0 +1,52 @@
+[
+    {
+        "id": "1",
+        "fromCity": "Dnipro",
+        "toCity": "Kiev",
+        "category": "c2",
+        "state": "Waiting",
+        "details": "details order 1",
+        "price": 200,
+        "accepted by": "Person 5"
+    },
+    {
+        "id": "2",
+        "fromCity": "Kiev",
+        "toCity": "Ternopil",
+        "category": "c3",
+        "state": "Delivered",
+        "details": "details order 2",
+        "price": 100,
+        "accepted by": "Person 4"
+    },
+    {
+        "id": "3",
+        "fromCity": "Lviv",
+        "toCity": "Dnipro",
+        "category": "c1",
+        "state": "Waiting",
+        "details": "details order 3",
+        "price": 300,
+        "accepted by": "Person 1"
+    },
+    {
+        "id": "4",
+        "fromCity": "Odessa",
+        "toCity": "kiev",
+        "category": "c2",
+        "state": "Delivered",
+        "details": "details order 4",
+        "price": 20,
+        "accepted by": "Person 2"
+    },
+    {
+        "id": "5",
+        "fromCity": "Lviv",
+        "toCity": "Ternopil",
+        "category": "c1",
+        "state": "Delivered",
+        "details": "details order 5",
+        "price": 220,
+        "accepted by": "Person 3"
+    }
+]
