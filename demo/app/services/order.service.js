@@ -1,4 +1,4 @@
-demoApp.factory('orderFactory', function ($http) {
+demoApp.factory('orderService', function ($http) {
     var _factory = {};
     var orders;
     _factory.getAll = function () {

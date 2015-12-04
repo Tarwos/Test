@@ -7,8 +7,8 @@ demoApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider
                 'categories-list': {
                     templateUrl: 'app/layouts/categories.html',            
                     resolve: {
-                        categories: function(categoryFactory) {
-                            return categoryFactory.getAll();
+                        categories: function(categoryService) {
+                            return categoryService.getAll();
                         }
                     },
                     controller: 'CategoriesCtrl'
@@ -21,8 +21,8 @@ demoApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider
                 'orders-list@': {
                     templateUrl: 'app/layouts/orders.html',
                     resolve: {
-                        orders: function($stateParams, orderFactory) {
-                            return orderFactory.getRelatedToCategory( $stateParams.categoryId );
+                        orders: function($stateParams, orderService) {
+                            return orderService.getRelatedToCategory( $stateParams.categoryId );
                         }
                     },
                     controller: 'OrdersCtrl'
@@ -35,8 +35,8 @@ demoApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider
                 'order-detail@': {
                     templateUrl: 'app/layouts/order-details.html',
                     resolve: {
-                        order: function($stateParams, orderFactory) {
-                            return orderFactory.get( $stateParams.orderId );
+                        order: function($stateParams, orderService) {
+                            return orderService.get( $stateParams.orderId );
                         }
                     },
                     controller: 'OrderDetailCtrl'
