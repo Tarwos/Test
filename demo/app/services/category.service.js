@@ -1,13 +1,14 @@
 demoApp.factory('categoryFactory', function ($http) {
     var _factory = {};
-    var categories = $http({
+    var categories;
+    _factory.getAll = function () {
+        categories = $http({
             method: 'GET',
-            url: 'data/categories.json',
+            url: 'assets/categories.json',
             cache: true
         }).then(function(response){
             return response.data;
         });
-    _factory.getAll = function () {
         return categories;
     };
     return _factory;

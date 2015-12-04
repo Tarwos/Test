@@ -1,16 +1,20 @@
 demoApp.factory('orderFactory', function ($http) {
     var _factory = {};
-    var orders = $http({
+    var orders;
+    _factory.getAll = function () {
+        orders = $http({
             method: 'GET',
-            url: 'data/orders.json',
+            url: 'assets/orders.json',
             cache: true
         }).then(function(response){
             return response.data;
         });
-    _factory.getAll = function () {
         return orders;
     };
     _factory.get = function (id) {
+        if ( !orders ) {
+            this.getAll();
+        }
         var result = orders.then(function(response){
             var object;
             response.some(function(order){
@@ -24,6 +28,9 @@ demoApp.factory('orderFactory', function ($http) {
         return result;
     };
     _factory.getRelatedToCategory = function (id) {
+        if ( !orders ) {
+            this.getAll();
+        }
         var result = orders.then(function(response){
             return response.filter(function(order){
                 return order.category === id;
