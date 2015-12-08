@@ -5,8 +5,8 @@ angular.module('demoApp.profile')
     $stateProvider
         .state('profile', {
             url: '/profile',
-            template: 'Profile will be here',
-            controller: function(){}            
+            templateUrl: 'app/layouts/profile/profile.html',
+            controller: 'ProfileCtrl'
     });
 }]);
 
