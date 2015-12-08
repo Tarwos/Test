@@ -1,0 +1,20 @@
+<div layout="row" layout-align="center center">
+    <div flex="40">
+        <form name="profileForm">
+            <md-input-container class="md-block">
+                <label>Name</label>
+                <input required name="name" ng-model="profile.name"/>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Last Name</label>
+                <input required name="lastName" ng-model="profile.lastName">
+            </md-input-container>    
+            <md-input-container class="md-block">
+                <label>Email</label>
+                <input required type="email" name="email" ng-model="profile.email"
+                       minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+            </md-input-container>
+            <md-button class="md-primary md-raised submit" type="submit">Submit</md-button>
+        </form>
+    </div>
+</div>
