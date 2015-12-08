@@ -1,4 +1,7 @@
-demoApp.factory('categoryService', function ($http) {
+'use strict';
+
+angular.module('demoApp.services')
+.factory('categoryService', ['$http', function ($http) {
     var _factory = {};
     var categories;
     _factory.getAll = function () {
@@ -12,5 +15,5 @@ demoApp.factory('categoryService', function ($http) {
         return categories;
     };
     return _factory;
-});
+}]);
 

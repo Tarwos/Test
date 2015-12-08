@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="demoApp" ng-cloak>
+<html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,13 +8,17 @@
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.1/angular-material.min.css" />
         <link rel="stylesheet" href="css/main.css" />
     </head>
-    <body>
-        
-        <div layout="row" layout-margin layout-padding>
-            <div flex ui-view="categories-list"></div>
-            <div flex ui-view="orders-list"></div>
-            <div flex ui-view="order-detail"></div>
-        </div>
+    <body layout="column" ng-app="demoApp" ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>
+                    <span>Demo</span>
+                </h2>
+                <md-button ui-sref="orders.categories_list" ui-sref-active="active">Orders</md-button>
+                <md-button ui-sref="profile" ui-sref-active="active">Profile</md-button>
+            </div>
+        </md-toolbar>        
+        <md-content ui-view></md-content>        
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4/angular.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4/angular-animate.min.js"></script>
@@ -23,15 +27,27 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.1/angular-material.min.js"></script>
         <script src="app/app.module.js"></script>
         <script src="app/app.config.js"></script>
-        <script src="app/layouts/categories.controller.js"></script>
-        <script src="app/layouts/orders.controller.js"></script>
-        <script src="app/layouts/order.details.controller.js"></script>
-        <script src="app/components/order.directive.js"></script>
-        <script src="app/components/orders.directive.js"></script>
-        <script src="app/components/categories.directive.js"></script>
-        <script src="app/services/category.service.js"></script>
-        <script src="app/services/order.service.js"></script>
-        <script src="app/main.controller.js"></script>
-        <script src="app/order.controller.js"></script>
+        
+        <!-- orders module -->
+        <script src="app/modules/orders/orders.module.js"></script>
+        <script src="app/modules/orders/orders.config.js"></script>
+        <script src="app/layouts/orders/categories-list/categories-list.controller.js"></script>
+        <script src="app/layouts/orders/orders-list/orders-list.controller.js"></script>
+        <script src="app/layouts/orders/order-details/order-details.controller.js"></script>
+        
+        <!-- profile module -->
+        <script src="app/modules/profile/profile.module.js"></script>
+        <script src="app/modules/profile/profile.config.js"></script>
+        
+        <!-- services module -->
+        <script src="app/core/services/app.services.js"></script>
+        <script src="app/core/services/category.service.js"></script>
+        <script src="app/core/services/order.service.js"></script>
+        
+        <!-- components -->
+        <script src="app/components/orders/order.directive.js"></script>
+        <script src="app/components/orders/orders.directive.js"></script>
+        <script src="app/components/orders/categories.directive.js"></script>       
+        
     </body>
 </html>

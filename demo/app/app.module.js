@@ -1,6 +1,11 @@
+'use strict';
+
 var demoApp = angular.module('demoApp', [
     "ngMaterial",
-    "ui.router"
+    "ui.router",
+    "demoApp.services",
+    "demoApp.orders",
+    "demoApp.profile"
 ]);
 
 

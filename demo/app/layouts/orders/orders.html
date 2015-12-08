@@ -1,0 +1,17 @@
+<!--<div layout="row" layout-margin layout-padding>
+    <div flex ui-view="categories-list"></div>
+    <div flex ui-view="orders-list"></div>
+    <div flex ui-view="order-details"></div>
+</div>-->
+
+<md-grid-list md-cols-gt-md="3" md-cols-md="3" md-cols-sm="1" md-gutter="1em" md-row-height="1:1">
+    <md-grid-tile>
+        <div ui-view="categories-list" layout="column" layout-fill layout-padding></div>
+    </md-grid-tile>
+    <md-grid-tile>
+        <div ui-view="orders-list" layout="column" layout-fill layout-padding></div>
+    </md-grid-tile>
+    <md-grid-tile>
+        <div ui-view="order-details" layout="column" layout-fill layout-padding></div>
+    </md-grid-tile>
+</md-grid-list>

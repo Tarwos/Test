@@ -1,5 +1,0 @@
-<a ui-sref="categories.orders.details({orderId:order.id})" ui-sref-active="active" class="order-item" ng-repeat="order in orders| filter:query | orderBy: ['fromCity', 'toCity']">
-    <p>Order id {{order.id}}</p>
-    <p>{{order.fromCity}} -> {{order.toCity}}</p>
-    <p>{{order.state}}</p>
-</a>

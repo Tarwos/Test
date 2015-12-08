@@ -1,4 +1,7 @@
-demoApp.factory('orderService', function ($http) {
+'use strict';
+
+angular.module('demoApp.services')
+.factory('orderService', ['$http', function ($http) {
     var _factory = {};
     var orders;
     _factory.getAll = function () {
@@ -39,7 +42,7 @@ demoApp.factory('orderService', function ($http) {
         return result;
     };
     return _factory;
-});
+}]);
 
 
 

@@ -3,6 +3,7 @@ a {
 }
 
 h3 {
+    padding-bottom: 0;
     text-align: center;
 }
 input {
@@ -17,10 +18,16 @@ input {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+md-input-container {
+    padding-bottom: 12px;
+}
+md-toolbar a.md-button.active {
+    background: rgba(158, 158, 158, 0.4);
+}
 /* categories */
 .category-item {
     margin: 20px 0;
-    border: 1px solid #696969;
+    border: 1px solid #3F51B5;
     border-radius: 4px;
     cursor: pointer;
     text-align: center;
@@ -32,27 +39,35 @@ input {
 }
 .category-item a.active {
     color: #fff;
-    background: #696969;
+    background: #3F51B5;
 }
-.category-item a:hover,
+.category-item a:not(.active):hover {
+    text-decoration: none;
+    background: rgba(158, 158, 158, 0.2);
+}
 .category-item .active:focus {
     text-decoration: none;
+    background: #3F51B5;
 }
 /* orders */
 .order-item {
     display: block;
     margin: 20px 0;
-    border: 1px solid #696969;
+    border: 1px solid #3F51B5;
     border-radius: 4px;
     cursor: pointer;
 }
 .order-item.active {
     color: #fff;
-    background: #696969;
+    background: #3F51B5;
 }
-.order-item:hover,
-.order-item:focus {
+.order-item:not(.active):hover {
     text-decoration: none;
+    background: rgba(158, 158, 158, 0.2);
+}
+.order-item .active:focus {
+    text-decoration: none;
+    background: #3F51B5;
 }
 .order-item p {
     color: #000;
@@ -65,7 +80,7 @@ input {
 order {
     display: block;
     margin: 20px 0;
-    border: 1px solid #696969;
+    border: 1px solid #3F51B5;
     border-radius: 4px;
 }
 order p {
