@@ -6,18 +6,18 @@ angular.module('demoApp.orders')
         .state('orders', {
             url: '/orders',
             abstract: true,
-            templateUrl: 'app/layouts/orders/orders.html'
+            templateUrl: 'app/layouts/orders/orders.html',
+            resolve: {
+                categories: ['categoryService', function(categoryService) {
+                    return categoryService.getAll();
+                }]
+            },
         })
         .state('orders.categories_list', {
             url: '',
             views: {
                 'categories-list': {
-                    templateUrl: 'app/layouts/orders/categories-list/categories-list.html',
-                    resolve: {
-                        categories: function(categoryService) {
-                            return categoryService.getAll();
-                        }
-                    },
+                    templateUrl: 'app/layouts/orders/categories-list/categories-list.html',                   
                     controller: 'CategoriesListCtrl'
                 }
             }            
@@ -28,9 +28,9 @@ angular.module('demoApp.orders')
                 'orders-list@orders': {
                     templateUrl: 'app/layouts/orders/orders-list/orders-list.html',
                     resolve: {
-                        orders: function($stateParams, orderService) {
+                        orders: ['$stateParams', 'orderService', function($stateParams, orderService) {
                             return orderService.getRelatedToCategory( $stateParams.categoryId );
-                        }
+                        }]
                     },
                     controller: 'OrdersListCtrl'
                 }
@@ -42,14 +42,13 @@ angular.module('demoApp.orders')
                 'order-details@orders': {
                     templateUrl: 'app/layouts/orders/order-details/order-details.html',
                     resolve: {
-                        order: function($stateParams, orderService) {
+                        order: ['$stateParams', 'orderService', function($stateParams, orderService) {
                             return orderService.get( $stateParams.orderId );
-                        }
+                        }]
                     },
                     controller: 'OrderDetailsCtrl'
                 }
-            },
-            onStart: function(){alert('details');}
+            }
         });
 }]);
 
