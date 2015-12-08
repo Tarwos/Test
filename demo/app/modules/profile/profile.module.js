@@ -1,4 +1,8 @@
 'use strict';
 
-angular.module('demoApp.profile', []);
+angular.module('demoApp.profile', [
+    "ngMaterial",
+    "ui.router",
+    "demoApp.services"
+]);
 
