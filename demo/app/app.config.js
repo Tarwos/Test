@@ -11,5 +11,7 @@ angular.module('demoApp')
 
 /*comment*/
 
+var = 10;
+var b =20;
 
 
